@@ -15,7 +15,6 @@ public class MultiplayerLobby : MonoBehaviour
 
     private async void Start()
     {
-        print("123");
         await UnityServices.InitializeAsync();
 
         AuthenticationService.Instance.SignedIn += () =>
@@ -24,7 +23,6 @@ public class MultiplayerLobby : MonoBehaviour
         };
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
         playerName = "Player" + UnityEngine.Random.Range(10, 99);
-
         Debug.Log(playerName);
     }
 

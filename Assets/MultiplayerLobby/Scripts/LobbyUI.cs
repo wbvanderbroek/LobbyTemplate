@@ -6,40 +6,22 @@ using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LobbyUI : MonoBehaviour {
-
-
+public class LobbyUI : MonoBehaviour 
+{
     public static LobbyUI Instance { get; private set; }
-
-
     [SerializeField] private Transform playerSingleTemplate;
     [SerializeField] private Transform container;
     [SerializeField] private TextMeshProUGUI lobbyNameText;
     [SerializeField] private TextMeshProUGUI playerCountText;
     [SerializeField] private TextMeshProUGUI gameModeText;
-    [SerializeField] private Button changeMarineButton;
-    [SerializeField] private Button changeNinjaButton;
-    [SerializeField] private Button changeZombieButton;
     [SerializeField] private Button leaveLobbyButton;
     [SerializeField] private Button changeGameModeButton;
     [SerializeField] private Button startGameButton;
-
-
 
     private void Awake() {
         Instance = this;
 
         playerSingleTemplate.gameObject.SetActive(false);
-
-        changeMarineButton.onClick.AddListener(() => {
-            LobbyManager.Instance.UpdatePlayerCharacter(LobbyManager.PlayerCharacter.Marine);
-        });
-        changeNinjaButton.onClick.AddListener(() => {
-            LobbyManager.Instance.UpdatePlayerCharacter(LobbyManager.PlayerCharacter.Ninja);
-        });
-        changeZombieButton.onClick.AddListener(() => {
-            LobbyManager.Instance.UpdatePlayerCharacter(LobbyManager.PlayerCharacter.Zombie);
-        });
 
         leaveLobbyButton.onClick.AddListener(() => {
             LobbyManager.Instance.LeaveLobby();
@@ -102,18 +84,15 @@ public class LobbyUI : MonoBehaviour {
 
         Show();
     }
-
     private void ClearLobby() {
         foreach (Transform child in container) {
             if (child == playerSingleTemplate) continue;
             Destroy(child.gameObject);
         }
     }
-
     private void Hide() {
         gameObject.SetActive(false);
     }
-
     private void Show() {
         gameObject.SetActive(true);
     }

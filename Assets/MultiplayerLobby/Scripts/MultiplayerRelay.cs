@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
-using Unity.Services.Authentication;
-using Unity.Services.Core;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MultiplayerRelay : MonoBehaviour
@@ -33,10 +28,7 @@ public class MultiplayerRelay : MonoBehaviour
             return _instance;
         }
     }
-
-
     //einde chatgbt
-
 
     public async Task<string> CreateRelay()
     {
@@ -64,7 +56,6 @@ public class MultiplayerRelay : MonoBehaviour
         }
 
     }
-
     public async void JoinRelay(string joinCode)
     {
         try
