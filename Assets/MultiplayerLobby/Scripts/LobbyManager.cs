@@ -62,6 +62,10 @@ public class LobbyManager : MonoBehaviour
     //        };
     //        await AuthenticationService.Instance.SignInAnonymouslyAsync();
     //}
+    private void Start()
+    {
+        Authenticate(EditPlayerName.Instance.GetPlayerName());
+    }
     private void Awake()
     {
         Instance = this;

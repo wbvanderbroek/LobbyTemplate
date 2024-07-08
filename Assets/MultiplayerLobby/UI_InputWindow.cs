@@ -1,27 +1,15 @@
-﻿/* 
-    ------------------- Code Monkey -------------------
-
-    Thank you for downloading this package
-    I hope you find it useful in your projects
-    If you have any questions let me know
-    Cheers!
-
-               unitycodemonkey.com
-    --------------------------------------------------
- */
-
-using CodeMonkey.Utils;
-using System;
+﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_InputWindow : MonoBehaviour
 {
 
     private static UI_InputWindow instance;
 
-    private Button_UI okBtn;
-    private Button_UI cancelBtn;
+    private Button okBtn;
+    private Button cancelBtn;
     private TextMeshProUGUI titleText;
     private TMP_InputField inputField;
 
@@ -29,8 +17,8 @@ public class UI_InputWindow : MonoBehaviour
     {
         instance = this;
 
-        okBtn = transform.Find("okBtn").GetComponent<Button_UI>();
-        cancelBtn = transform.Find("cancelBtn").GetComponent<Button_UI>();
+        okBtn = transform.Find("okBtn").GetComponent<Button>();
+        cancelBtn = transform.Find("cancelBtn").GetComponent<Button>();
         titleText = transform.Find("titleText").GetComponent<TextMeshProUGUI>();
         inputField = transform.Find("inputField").GetComponent<TMP_InputField>();
 
@@ -41,11 +29,11 @@ public class UI_InputWindow : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            okBtn.ClickFunc();
+            okBtn.onClick.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            cancelBtn.ClickFunc();
+            okBtn.onClick.Invoke();
         }
     }
 
@@ -65,17 +53,19 @@ public class UI_InputWindow : MonoBehaviour
         inputField.text = inputString;
         inputField.Select();
 
-        okBtn.ClickFunc = () =>
+        okBtn.onClick.RemoveAllListeners();
+        okBtn.onClick.AddListener(() =>
         {
             Hide();
             onOk(inputField.text);
-        };
+        });
 
-        cancelBtn.ClickFunc = () =>
+        cancelBtn.onClick.RemoveAllListeners();
+        cancelBtn.onClick.AddListener(() =>
         {
             Hide();
             onCancel();
-        };
+        });
     }
 
     private void Hide()
