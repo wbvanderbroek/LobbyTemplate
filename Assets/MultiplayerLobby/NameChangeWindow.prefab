@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 3275604382287273273}
   - component: {fileID: 3275604382287273272}
   m_Layer: 0
-  m_Name: UI_InputWindow
+  m_Name: NameChangeWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
