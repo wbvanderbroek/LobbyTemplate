@@ -199,21 +199,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 630903846842564787, guid: b130bf2bc13949d4895274c1924b4091,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 630903846842564787, guid: b130bf2bc13949d4895274c1924b4091,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 630903846842564787, guid: b130bf2bc13949d4895274c1924b4091,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1468
-      objectReference: {fileID: 0}
     - target: {fileID: 3583402734510957540, guid: b130bf2bc13949d4895274c1924b4091,
         type: 3}
       propertyPath: m_Name
@@ -317,31 +302,6 @@ PrefabInstance:
     - target: {fileID: 5974440147445834082, guid: b130bf2bc13949d4895274c1924b4091,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616380922036913375, guid: b130bf2bc13949d4895274c1924b4091,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616380922036913375, guid: b130bf2bc13949d4895274c1924b4091,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616380922036913375, guid: b130bf2bc13949d4895274c1924b4091,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616380922036913375, guid: b130bf2bc13949d4895274c1924b4091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616380922036913375, guid: b130bf2bc13949d4895274c1924b4091,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -54,9 +54,14 @@ public class LobbyListUI : MonoBehaviour
 
             Destroy(child.gameObject);
         }
-
-        foreach (Lobby lobby in lobbyList) {
+        int lobbyCount = 0;
+        foreach (Lobby lobby in lobbyList) 
+        {
             Transform lobbySingleTransform = Instantiate(lobbySingleTemplate, container);
+            lobbySingleTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(lobbySingleTransform.GetComponent<RectTransform>().anchoredPosition.y,
+                lobbySingleTemplate.GetComponent<RectTransform>().anchoredPosition.y - lobbyCount * lobbySingleTemplate.GetComponent<RectTransform>().sizeDelta.y);
+            lobbyCount++;
+
             lobbySingleTransform.gameObject.SetActive(true);
             LobbyListSingleUI lobbyListSingleUI = lobbySingleTransform.GetComponent<LobbyListSingleUI>();
             lobbyListSingleUI.UpdateLobby(lobby);
