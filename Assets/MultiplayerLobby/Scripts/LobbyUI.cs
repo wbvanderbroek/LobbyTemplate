@@ -68,11 +68,16 @@ public class LobbyUI : MonoBehaviour
     private void UpdateLobby(Lobby lobby) {
         ClearLobby();
 
+        int playerCount = 0;
         foreach (Player player in lobby.Players) {
             Transform playerSingleTransform = Instantiate(playerSingleTemplate, container);
             playerSingleTransform.gameObject.SetActive(true);
             LobbyPlayerSingleUI lobbyPlayerSingleUI = playerSingleTransform.GetComponent<LobbyPlayerSingleUI>();
 
+
+            lobbyPlayerSingleUI.GetComponent<RectTransform>().anchoredPosition = new Vector2(lobbyPlayerSingleUI.GetComponent<RectTransform>().anchoredPosition.y,
+                playerSingleTemplate.GetComponent<RectTransform>().anchoredPosition.y - playerCount * playerSingleTemplate.GetComponent<RectTransform>().sizeDelta.y);
+            playerCount++;
             lobbyPlayerSingleUI.SetKickPlayerButtonVisible(
                 LobbyManager.Instance.IsLobbyHost() &&
                 player.Id != AuthenticationService.Instance.PlayerId // Don't allow kick self
