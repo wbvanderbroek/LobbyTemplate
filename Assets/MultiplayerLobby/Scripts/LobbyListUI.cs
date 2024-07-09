@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +13,8 @@ public class LobbyListUI : MonoBehaviour
     [SerializeField] private Transform container;
     [SerializeField] private Button refreshButton;
     [SerializeField] private Button createLobbyButton;
+    [SerializeField] private Button joinLobbyByIDButton;
+    [SerializeField] private TMP_InputField joinLobbyByIDInputField;
 
     private void Awake() {
         Instance = this;
@@ -19,6 +23,8 @@ public class LobbyListUI : MonoBehaviour
 
         refreshButton.onClick.AddListener(RefreshButtonClick);
         createLobbyButton.onClick.AddListener(CreateLobbyButtonClick);
+        joinLobbyByIDButton.onClick.AddListener(JoinLobbyByIDButtonClick);
+
     }
     private void Start() {
         LobbyManager.Instance.OnLobbyListChanged += LobbyManager_OnLobbyListChanged;
@@ -62,6 +68,11 @@ public class LobbyListUI : MonoBehaviour
     private void CreateLobbyButtonClick()
     {
         LobbyCreateUI.Instance.Show();
+    }
+    private void JoinLobbyByIDButtonClick()
+    {
+        Hide();
+        LobbyManager.Instance.JoinLobbyByCode(joinLobbyByIDInputField.text);
     }
     private void Hide() 
     {
