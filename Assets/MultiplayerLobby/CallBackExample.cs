@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerSpawnManager : MonoBehaviour
+public class CallBackExample : MonoBehaviour
 {
     private int amountOfPlayersSpawned;
     void Start()
