@@ -69,10 +69,12 @@ public class LobbyListUI : MonoBehaviour
     {
         LobbyCreateUI.Instance.Show();
     }
-    private void JoinLobbyByIDButtonClick()
+    private async void JoinLobbyByIDButtonClick()
     {
-        Hide();
-        LobbyManager.Instance.JoinLobbyByCode(joinLobbyByIDInputField.text);
+        if (await LobbyManager.Instance.JoinLobbyByCode(joinLobbyByIDInputField.text))
+        {
+            Hide();
+        }
     }
     private void Hide() 
     {

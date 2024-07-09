@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Lobbies;
@@ -260,17 +261,28 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-    public async void JoinLobbyByCode(string lobbyCode)
+    public async Task<bool> JoinLobbyByCode(string lobbyCode)
     {
-        Player player = GetPlayer();
+        try
+        {
+            Player player = GetPlayer();
 
-        Lobby lobby = await LobbyService.Instance.JoinLobbyByCodeAsync(lobbyCode, new JoinLobbyByCodeOptions {
-            Player = player
-        });
+            Lobby lobby = await LobbyService.Instance.JoinLobbyByCodeAsync(lobbyCode, new JoinLobbyByCodeOptions
+            {
+                Player = player
+            });
 
-        joinedLobby = lobby;
+            joinedLobby = lobby;
 
-        OnJoinedLobby?.Invoke(this, new LobbyEventArgs { lobby = lobby });
+            OnJoinedLobby?.Invoke(this, new LobbyEventArgs { lobby = lobby });
+            return true;
+
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.Log(e);
+            return false;
+        }
     }
 
     public async void JoinLobby(Lobby lobby)
