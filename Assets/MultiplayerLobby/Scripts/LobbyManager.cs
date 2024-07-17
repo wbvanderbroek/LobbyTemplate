@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TMPro;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Lobbies;
@@ -11,6 +12,8 @@ using UnityEngine.SceneManagement;
 public class LobbyManager : MonoBehaviour 
 {
     public string sceneNameToGoTo;
+    [SerializeField] private TMP_InputField playerNameInputField;
+
     public static LobbyManager Instance { get; private set; }
 
     public const string KEY_PLAYER_NAME = "PlayerName";
@@ -65,6 +68,7 @@ public class LobbyManager : MonoBehaviour
     //}
     private void Start()
     {
+        print(playerNameInputField.text.Length);
         Authenticate(EditPlayerName.Instance.GetPlayerName());
     }
     private void Awake()

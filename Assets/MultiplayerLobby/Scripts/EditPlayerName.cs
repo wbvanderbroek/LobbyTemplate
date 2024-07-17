@@ -7,25 +7,13 @@ public class EditPlayerName : MonoBehaviour
 {
     public static EditPlayerName Instance { get; private set; }
     public event EventHandler OnNameChanged;
-    [SerializeField] private TextMeshProUGUI playerNameText;
+    [SerializeField] private TMP_InputField playerNameText;
     private string playerName = "Player";
 
     private void Awake() {
         Instance = this;
 
-        GetComponent<Button>().onClick.AddListener(() => {
-            UI_InputWindow.Show_Static("Player Name", playerName, "abcdefghijklmnopqrstuvxywzABCDEFGHIJKLMNOPQRSTUVXYWZ .,-", 20,
-            () => {
-                // Cancel
-            },
-            (string newName) => {
-                playerName = newName;
-
-                playerNameText.text = playerName;
-
-                OnNameChanged?.Invoke(this, EventArgs.Empty);
-            });
-        });
+        playerNameText.onEndEdit.AddListener(delegate { EditPlayerName_OnNameChanged(this, EventArgs.Empty); });
 
         playerNameText.text = playerName;
     }
@@ -36,6 +24,8 @@ public class EditPlayerName : MonoBehaviour
         LobbyManager.Instance.UpdatePlayerName(GetPlayerName());
     }
     public string GetPlayerName() {
-        return playerName;
+        Debug.Log(playerNameText.text);
+        return playerNameText.text.Length > 0 ? playerNameText.text : "Player";
+
     }
 }
