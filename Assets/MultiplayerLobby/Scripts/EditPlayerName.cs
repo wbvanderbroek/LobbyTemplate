@@ -24,7 +24,6 @@ public class EditPlayerName : MonoBehaviour
         LobbyManager.Instance.UpdatePlayerName(GetPlayerName());
     }
     public string GetPlayerName() {
-        Debug.Log(playerNameText.text);
         return playerNameText.text.Length > 0 ? playerNameText.text : "Player";
 
     }

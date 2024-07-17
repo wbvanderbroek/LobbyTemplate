@@ -68,7 +68,6 @@ public class LobbyManager : MonoBehaviour
     //}
     private void Start()
     {
-        print(playerNameInputField.text.Length);
         Authenticate(EditPlayerName.Instance.GetPlayerName());
     }
     private void Awake()
