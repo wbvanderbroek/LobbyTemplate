@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CallBackExample : MonoBehaviour
 {
+    //be sure to tick the checkbox for connectionapproval in the networkmanager, wont work otherwise
     private int amountOfPlayersSpawned;
     void Start()
     {
@@ -28,10 +29,10 @@ public class CallBackExample : MonoBehaviour
          * depending on other factors (I.E: player's team)
          */
         amountOfPlayersSpawned++;
-        return new Vector3(55 - amountOfPlayersSpawned * 4, 6, 728);
+        return new Vector3(amountOfPlayersSpawned * 2,0,0);
     }
     Quaternion GetPlayerSpawnRotation()
     {
-        return Quaternion.Euler(0, 50, 0);
+        return Quaternion.Euler(0, 0, 0);
     }
 }
