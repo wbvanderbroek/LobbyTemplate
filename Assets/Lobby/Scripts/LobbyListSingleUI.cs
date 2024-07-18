@@ -12,7 +12,7 @@ public class LobbyListSingleUI : MonoBehaviour {
     private Lobby lobby;
 
     private void Awake() {
-        GetComponent<Button>().onClick.AddListener(() => {
+        transform.Find("JoinButton").GetComponent<Button>().onClick.AddListener(() => {
             LobbyManager.Instance.JoinLobby(lobby);
         });
     }
