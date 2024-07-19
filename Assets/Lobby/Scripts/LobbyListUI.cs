@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LobbyListUI : MonoBehaviour 
+public class LobbyListUI : MonoBehaviour
 {
     public static LobbyListUI Instance { get; private set; }
     [SerializeField] private Transform lobbySingleTemplate;
@@ -16,7 +15,8 @@ public class LobbyListUI : MonoBehaviour
     [SerializeField] private Button joinLobbyByIDButton;
     [SerializeField] private TMP_InputField joinLobbyByIDInputField;
 
-    private void Awake() {
+    private void Awake()
+    {
         Instance = this;
 
         lobbySingleTemplate.gameObject.SetActive(false);
@@ -26,7 +26,8 @@ public class LobbyListUI : MonoBehaviour
         joinLobbyByIDButton.onClick.AddListener(JoinLobbyByIDButtonClick);
 
     }
-    private void Start() {
+    private void Start()
+    {
         LobbyManager.Instance.OnLobbyListChanged += LobbyManager_OnLobbyListChanged;
         LobbyManager.Instance.OnJoinedLobby += LobbyManager_OnJoinedLobby;
         LobbyManager.Instance.OnLeftLobby += LobbyManager_OnLeftLobby;
@@ -36,7 +37,8 @@ public class LobbyListUI : MonoBehaviour
     {
         Show();
     }
-    private void LobbyManager_OnLeftLobby(object sender, EventArgs e) {
+    private void LobbyManager_OnLeftLobby(object sender, EventArgs e)
+    {
         Show();
     }
     private void LobbyManager_OnJoinedLobby(object sender, LobbyManager.LobbyEventArgs e)
@@ -49,13 +51,14 @@ public class LobbyListUI : MonoBehaviour
     }
     private void UpdateLobbyList(List<Lobby> lobbyList)
     {
-        foreach (Transform child in container) {
+        foreach (Transform child in container)
+        {
             if (child == lobbySingleTemplate) continue;
 
             Destroy(child.gameObject);
         }
         int lobbyCount = 0;
-        foreach (Lobby lobby in lobbyList) 
+        foreach (Lobby lobby in lobbyList)
         {
             Transform lobbySingleTransform = Instantiate(lobbySingleTemplate, container);
             lobbySingleTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(lobbySingleTransform.GetComponent<RectTransform>().anchoredPosition.y,
@@ -67,7 +70,8 @@ public class LobbyListUI : MonoBehaviour
             lobbyListSingleUI.UpdateLobby(lobby);
         }
     }
-    private void RefreshButtonClick() {
+    private void RefreshButtonClick()
+    {
         LobbyManager.Instance.RefreshLobbyList();
     }
     private void CreateLobbyButtonClick()
@@ -81,11 +85,11 @@ public class LobbyListUI : MonoBehaviour
             Hide();
         }
     }
-    private void Hide() 
+    private void Hide()
     {
         gameObject.SetActive(false);
     }
-    private void Show() 
+    private void Show()
     {
         gameObject.SetActive(true);
     }

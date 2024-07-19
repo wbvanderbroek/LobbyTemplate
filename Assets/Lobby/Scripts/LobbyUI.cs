@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using Unity.Services.Authentication;
 using Unity.Services.Lobbies.Models;
@@ -27,7 +25,6 @@ public class LobbyUI : MonoBehaviour
         leaveLobbyButton.onClick.AddListener(() => {
             LobbyManager.Instance.LeaveLobby();
         });
-
         //changeGameModeButton.onClick.AddListener(() => {
         //    LobbyManager.Instance.ChangeGameMode();
         //});
@@ -69,7 +66,8 @@ public class LobbyUI : MonoBehaviour
         ClearLobby();
 
         int playerCount = 0;
-        foreach (Player player in lobby.Players) {
+        foreach (Player player in lobby.Players) 
+        {
             Transform playerSingleTransform = Instantiate(playerSingleTemplate, container);
             playerSingleTransform.gameObject.SetActive(true);
             LobbyPlayerSingleUI lobbyPlayerSingleUI = playerSingleTransform.GetComponent<LobbyPlayerSingleUI>();
@@ -80,7 +78,7 @@ public class LobbyUI : MonoBehaviour
             playerCount++;
             lobbyPlayerSingleUI.SetKickPlayerButtonVisible(
                 LobbyManager.Instance.IsLobbyHost() &&
-                player.Id != AuthenticationService.Instance.PlayerId // Don't allow kick self
+                player.Id != AuthenticationService.Instance.PlayerId // Don't allow kick yourself
             );
 
             lobbyPlayerSingleUI.UpdatePlayer(player);
@@ -95,16 +93,19 @@ public class LobbyUI : MonoBehaviour
 
         Show();
     }
-    private void ClearLobby() {
+    private void ClearLobby()
+    {
         foreach (Transform child in container) {
             if (child == playerSingleTemplate) continue;
             Destroy(child.gameObject);
         }
     }
-    private void Hide() {
+    private void Hide()
+    {
         gameObject.SetActive(false);
     }
-    private void Show() {
+    private void Show()
+    {
         gameObject.SetActive(true);
     }
 

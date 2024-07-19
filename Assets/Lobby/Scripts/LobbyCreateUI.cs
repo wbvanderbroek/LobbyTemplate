@@ -1,10 +1,9 @@
 using System;
-using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LobbyCreateUI : MonoBehaviour 
+public class LobbyCreateUI : MonoBehaviour
 {
     public static LobbyCreateUI Instance { get; private set; }
 
@@ -19,10 +18,12 @@ public class LobbyCreateUI : MonoBehaviour
     private bool isPrivate;
     private LobbyManager.GameMode gameMode;
 
-    private void Awake() {
+    private void Awake()
+    {
         Instance = this;
 
-        createButton.onClick.AddListener(() => {
+        createButton.onClick.AddListener(() =>
+        {
             LobbyManager.Instance.CreateLobby(
                 lobbyNameInputField.text.Length > 0 ? lobbyNameInputField.text : "MyLobby",
                  Int32.Parse(maxPlayersInputField.text) > 0 ? Int32.Parse(maxPlayersInputField.text) : 4,
@@ -32,13 +33,16 @@ public class LobbyCreateUI : MonoBehaviour
             Hide();
         });
 
-        publicPrivateButton.onClick.AddListener(() => {
+        publicPrivateButton.onClick.AddListener(() =>
+        {
             isPrivate = !isPrivate;
             UpdateText();
         });
 
-        gameModeButton.onClick.AddListener(() => {
-            switch (gameMode) {
+        gameModeButton.onClick.AddListener(() =>
+        {
+            switch (gameMode)
+            {
                 default:
                 case LobbyManager.GameMode.CaptureTheFlag:
                     gameMode = LobbyManager.GameMode.Conquest;
@@ -52,14 +56,17 @@ public class LobbyCreateUI : MonoBehaviour
 
         Hide();
     }
-    private void UpdateText() {
+    private void UpdateText()
+    {
         publicPrivateText.text = isPrivate ? "Private" : "Public";
         gameModeText.text = gameMode.ToString();
     }
-    private void Hide() {
+    private void Hide()
+    {
         gameObject.SetActive(false);
     }
-    public void Show() {
+    public void Show()
+    {
         gameObject.SetActive(true);
 
         isPrivate = false;
