@@ -204,10 +204,40 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 392995549358933519, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 753714359592772155, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050786062014043123, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980868375241225573, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3583402734510957540, guid: b130bf2bc13949d4895274c1924b4091,
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679572450044293665, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823816914033725569, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5974440147445834082, guid: b130bf2bc13949d4895274c1924b4091,
         type: 3}
@@ -308,6 +338,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974919168879362850, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257596196835837847, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698451072498207365, guid: b130bf2bc13949d4895274c1924b4091,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
