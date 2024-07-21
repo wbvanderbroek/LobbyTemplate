@@ -362,12 +362,12 @@ RectTransform:
   m_Children:
   - {fileID: 4691088371055532716}
   - {fileID: 3775602876942300415}
+  - {fileID: 1990153919551987097}
   - {fileID: 5567719460491713924}
   - {fileID: 2192511630795336296}
   - {fileID: 5877638918590960331}
   - {fileID: 4758193082446236024}
   - {fileID: 7323486785510395192}
-  - {fileID: 1990153919551987097}
   - {fileID: 776265964972733249}
   - {fileID: 2520406780716576140}
   - {fileID: 8218117134832275697}
@@ -1870,7 +1870,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!1 &3208557995822186620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!1 &3430675443227485313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,8 +2953,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278247423
-  m_fontColor: {r: 1, g: 0.8741453, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3290,7 +3290,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!1 &4736565433002043259
 GameObject:
   m_ObjectHideFlags: 0
@@ -4076,8 +4076,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278247423
-  m_fontColor: {r: 1, g: 0.8731508, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4451,9 +4451,9 @@ RectTransform:
   m_Children:
   - {fileID: 5042507595234328266}
   - {fileID: 2827779022697399840}
+  - {fileID: 4276144076904797916}
   - {fileID: 6490099195805233610}
   - {fileID: 3267198762094105111}
-  - {fileID: 4276144076904797916}
   - {fileID: 386524033556167706}
   - {fileID: 859078864321415973}
   - {fileID: 7937367181524900060}
@@ -4984,7 +4984,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!114 &6193839539181816259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5942,7 +5942,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!114 &4310521811326107993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6323,7 +6323,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!114 &6481048650403990020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6446,7 +6446,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!114 &7032572551792927447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6848,7 +6848,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!1 &8457878204954021127
 GameObject:
   m_ObjectHideFlags: 0
@@ -6999,7 +6999,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 50
+  m_PixelsPerUnitMultiplier: 15
 --- !u!1 &8578512592609025306
 GameObject:
   m_ObjectHideFlags: 0
