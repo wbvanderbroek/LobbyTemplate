@@ -931,10 +931,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1e26fb46-6722-4faf-99c5-5cd563e6f1b8
+  cloudProjectId: fcd6dfca-d624-42e5-b27a-62d55940ec2e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: CoopBaseDefense
+  projectName: LobbyTemplate
   organizationId: waltercoding
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
